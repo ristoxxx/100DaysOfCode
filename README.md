@@ -1,3 +1,5 @@
+[![ui-tests](https://github.com/ristoxxx/100DaysOfCode/actions/workflows/main.yml/badge.svg)](https://github.com/ristoxxx/100DaysOfCode/actions/workflows/main.yml)  
+
 # 100DaysOfCode
 
 this is my journey in 100 days of code
