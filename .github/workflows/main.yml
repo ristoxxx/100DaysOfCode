@@ -1,43 +1,43 @@
 on:
-    workflow_dispatch:
-  
-  name: ui-tests
-  
-  jobs:
-    test:
-      name: deploy RF-tests
-      runs-on: ubuntu-latest
-      steps:
-      - name: checkout
-        uses: actions/checkout@v2
-      - name: Robot Framework
-        uses: joonvena/robotframework-docker-action@v1.1
-        with:
-          allowed_shared_memory: 1g
-          browser: chrome
-          robot_threads: 1
-          robot_tests_dir: Tests
-          robot_reports_dir: Reports
-          robot_runner_image: ppodgorsek/robot-framework:latest
-      - name: Upload test results
-        uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: reports
-          path: Reports
-  
-    generate_report:
+  workflow_dispatch:
+
+name: ui-tests
+
+jobs:
+  test:
+    name: deploy RF-tests
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: Robot Framework
+      uses: joonvena/robotframework-docker-action@v1.1
+      with:
+        allowed_shared_memory: 1g
+        browser: chrome
+        robot_threads: 1
+        robot_tests_dir: Tests
+        robot_reports_dir: Reports
+        robot_runner_image: ppodgorsek/robot-framework:latest
+    - name: Upload test results
+      uses: actions/upload-artifact@v1
       if: always()
-      needs: [test] 
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v2
-      - name: Download reports
-        uses: actions/download-artifact@v1
-        with:
-          name: reports
-      - name: Send report to commit
-        uses: joonvena/robotframework-reporter-action@v2.3
-        with:
-          gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        name: reports
+        path: Reports
+
+  generate_report:
+    if: always()
+    needs: [test] 
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Download reports
+      uses: actions/download-artifact@v1
+      with:
+        name: reports
+    - name: Send report to commit
+      uses: joonvena/robotframework-reporter-action@v2.3
+      with:
+        gh_access_token: ${{ secrets.GITHUB_TOKEN }}
   
