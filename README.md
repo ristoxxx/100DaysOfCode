@@ -1,4 +1,4 @@
-[![ui-tests](https://github.com/ristoxxx/100DaysOfCode/actions/workflows/main.yml/badge.svg)](https://github.com/ristoxxx/100DaysOfCode/actions/workflows/main.yml)  
+[![tests](https://github.com/ristoxxx/100DaysOfCode/actions/workflows/main.yml/badge.svg)](https://github.com/ristoxxx/100DaysOfCode/actions/workflows/main.yml)  
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ristoxxx/100DaysOfCode)
 
 # 100DaysOfCode
