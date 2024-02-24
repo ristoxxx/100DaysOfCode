@@ -3,7 +3,7 @@
 
 # 100DaysOfCode
 
-this is my journey in 100 days of code
+This is my journey in 100 days of code.
 
 result can be found from here:
 https://100-days-of-code-rho.vercel.app
