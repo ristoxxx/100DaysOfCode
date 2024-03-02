@@ -8,4 +8,4 @@ This is my journey in 100 days of code.
 result can be found from here:
 https://100-days-of-code-rho.vercel.app
 
-Goal of the project is to make siple website and learn somethong new.
+Goal of the project is to make siple website and learn something new.
